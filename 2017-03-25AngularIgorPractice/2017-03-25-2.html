@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../angular.min.js"></script>
+    <script src="2017-03-25.js"></script>
+</head>
+<body ng-controller="MyCity">
+<h1>{{title}}</h1>
+<input type="text" ng-model="query">
+<ul>
+    <!--<li ng-repeat="item in myList | filter: {$:query, status : true}">-->
+    <li ng-repeat="phone in phones">
+        <span>{{phone.name}}</span>
+        <p>
+            {{phone.snippet}}<br/>
+            Status: {{phone.status}}<br/>
+            Priority: {{phone.primary}}
+        </p>
+    </li>
+</ul>
+<p>Bыбрано: {{ phones.length }}</p>
+<p>Общее кол-во {{myList.length}}</p>
+
+<table>
+    <tr ng-repeat="i in [1,2,3,4,5]">
+        <td>{{i}}</td>
+    </tr>
+</table>
+{{today | date:'dd/MM/yyyy'}}
+<ul>
+    <li>1. Currency:{{234 | currency}}</li>
+    <li>
+        <pre>2. Date:    {{today | date:'dd/MM/yyyy'}}</pre>
+    </li>
+    <li>3. Number: {{123.55677 | number:3}}</li>
+    <li>4. Lovercasre: {{"Hello world" | lowercase}}</li>
+    <li>5. Uppercase: {{"Hello world" | uppercase}}</li>
+    <li>6. JSON:
+        <pre>{{ {'text':'text', 'text2':'text,text'}| json }}</pre>
+    </li>
+</ul>
+
+<table>
+    <thead>
+    <tr>
+        <th><a href="" ng-click="sort('city')">Name</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in myList | orderBy:sortField:reverse">
+        <td>{{item.city}}</td>
+    </tr>
+    </tbody>
+</table>
+<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>My first Angular app</title>
+</head>
+<body>
+<div ng-init="number = 19">
+    Your guess: <input type="number" ng-model="guess">
+    <p ng-hide="guess !== number">Correct</p>
+    <p ng-show="guess !== number">Incorrect</p>
+</div>
+<script src="angular.js"></script>
+</body>
+</html>
+
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+    <!DOCTYPE html>
+<html lang="en" ng-app="appModule">
+<head>
+    <meta charset="UTF-8">
+    <script src="js/angular.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChL8L-L-wuRwStnZkbNf1REvWrTECnnco&callback"></script>
+    <script src="js/controller.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="mainDiv" ng-controller="controllerGames">
+
+    <div id="weather">{{wind}}
+
+    </div>
+
+    <table id="tableCalendar" >
+        <thead>
+        <tr>
+            <th ng-click = "prop='days' ; reverse=!reverse">days</th>
+            <th ng-click = "prop='time' ; reverse=!reverse">time</th>
+            <th ng-click = "prop='team1' ; reverse=!reverse">team1</th>
+            <th ng-click = "prop='team2' ; reverse=!reverse">team2</th>
+            <th ng-click = "prop='stadio' ; reverse=!reverse">stadio</th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr ng-repeat="game in calendar  | orderBy: prop:reverse">
+            <td>
+                {{game.days}}
+            </td>
+            <td>
+                {{game.time}}
+            </td>
+            <td>
+                {{game.team1}}
+            </td>
+            <td>
+                {{game.team2}}
+            </td>
+            <td ng-click="alertStadio(game.stadio)">
+                {{game.stadio}}
+            </td>
+
+        </tr>
+
+        </tbody>
+    </table>
+
+
+    <div id="map" ng-controller="mapCtrl"></div>
+
+</div>
+
+
+
+<!--<tr ng-controller="hexCtrl">-->
+<!--<td>{{hex}}</td>-->
+
+<!--</tr>-->
+
+
+<script>
+    //    var url = "http://127.0.0.1:8888";
+    //
+    //    var xhr = new XMLHttpRequest();
+    //    xhr.onreadystatechange = function () {
+    //        if(xhr.readyState !=4) return;
+    //        console.log(xhr.response);
+    //    };
+    //    xhr.open("GET",url,true)
+
+</script>
+
+
+</body>
+</html>

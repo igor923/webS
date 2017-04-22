@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>auth</title>
+    <script src="appSchedule/LearningShedule/imports/jquery-3.1.1.min.js"></script>
+    <script src="appSchedule/LearningShedule/imports/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/qunit/qunit-1.14.0.css">
+    <script src="appSchedule/LearningShedule/imports/jquery.cookie.js"></script>
+
+    <script src="appSchedule/LearningShedule/imports/core.js"></script>
+    <script src="appSchedule/LearningShedule/imports/md5.js"></script>
+    <script src="appSchedule/LearningShedule/teacher.js"></script>
+    <script src="appSchedule/LearningShedule/student.js"></script>
+    <link rel="stylesheet" href="appSchedule/LearningShedule/styleAuth.css"/>
+</head>
+<body>
+<div id="container">
+    <div id="header">
+
+        <img id="logoBig" class="centered" src="appSchedule/LearningShedule/img/Logobig.png"/>
+        <img id="logo" class="centered" src="appSchedule/LearningShedule/img/Logo.png"/>
+
+        <div class=" centered telran">
+            <h1>TEL-RAN</h1>
+            <h6>COMPUTING SOLUTION LTD.</h6>
+            <h3>ATTENDANCE AND SHEDULE</h3></div>
+    </div>
+
+    <div id="content" class="centered">
+           <!--<form  action="" novalidate >-->
+            <input id="user" class="input" type="text" name="login" placeholder="login"><br>
+            <input id="pass" class="input" type="password" name="password" placeholder="password"><br>
+            <input id="submit" class="but" type="submit" name="submit" value="SUBMIT">
+       <!-- </form>-->
+        <h6>Just input your login and password<br>
+            and you’ll be transferred to personal page</h6>
+    </div>
+</div>
+
+<script src="appSchedule/LearningShedule/admin.js"></script>
+<script>
+    Student.studentPage('903415736');
+    //    console.log("prev coookie ",);
+
+  /*     var hardcodeSwitcher = 'student';
+
+    if(hardcodeSwitcher =='student') $.cookie('token','942423200');                    //student
+    else $.cookie('token','300192086');                                                    //teacher
+*/
+
+  /*  $(function () {
+
+        if ($.cookie("token")){
+            var requestBody = {
+                token: $.cookie("token") ,
+                login: ''
+            };
+            $.post('/check/token',JSON.stringify(requestBody), function (data) {
+                var response = JSON.parse(data);
+                if(response.status === 'ok'){
+                    routing(response.accessLevel, $.cookie("token"));
+                }
+            } );
+        }
+
+
+        $('#submit').click(function () {
+
+            var passMD5 = CryptoJS.MD5($('#pass').val()).toString();
+            var url = '/set/token';
+            var postBody = {
+                login: $('#user').val(),
+                pass:passMD5
+            };
+            var strPostBody = JSON.stringify(postBody);
+            requestToServerPost(url, strPostBody);
+        });
+
+        var requestToServerPost = function (url, postBody) {
+
+            $.post(url, postBody, function (data) {
+                $('input').removeClass('red');
+                var result = JSON.parse(data);
+                if (result.status != 'ok') {
+
+                    console.log($(result.field));
+                    $(result.field).addClass("red");
+                }
+                if (result.newToken) {
+                    $.cookie("token", result.newToken);
+                     routing(result.accessLevel, result.newToken);
+                }
+            });
+        };
+
+        var routing = function (role, token) {
+            if(role === 'S') Student.studentPage(token);       // Igor
+            else if(role === 'T') teacherPage(token) ;// Kirill
+            else if(role === 'admin') adminPage(token);      // none
+        }
+
+    });*/
+</script>
+
+</body>
+</html>

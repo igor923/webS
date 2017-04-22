@@ -1,0 +1,21 @@
+#tableCalendar{
+    border-collapse: collapse;
+    display: inline-block;
+}
+
+td{
+    width: 100px;
+    padding: 10px;
+    border: 1px solid black;
+}
+th{
+    width: 100px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+#map {
+    width:600px;
+    height:550px;
+    display: inline-block;
+}

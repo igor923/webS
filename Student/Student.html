@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jsonBackEnd.js"></script>
+    <script src = "../jquery.min.js"></script>
+    <script src = "Student.js"></script>
+    <style>
+        .button{
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            left: 50px;
+        }
+        .sch{
+            top: 50px;
+
+        }
+        .att{
+            top: 150px;
+        }
+        .pay{
+            top: 250px;
+        }
+        #tbl{
+            position: absolute;
+            border-collapse: collapse;
+            top: 20px;
+            left: 200px;
+            width: 80vw;
+            height: 80vh;
+            border: 1px solid black;
+
+        }
+
+        #tbl td{
+            border: 1px solid black;
+            width: 25%;
+            height: 25%;
+            text-align: center;
+
+        }
+
+
+
+    </style>
+
+</head>
+<body>
+<button id="schedule" class="button sch">Schedule</button><br>
+<button id="attendance" class="button att">Attendance</button><br>
+<button id="payments" class="button pay">My payments</button><br>
+<table id="tbl">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+<script>
+    var token="111";
+
+
+    Student.buttonOnclick("schedule","/schedule","tbl",token);
+    Student.buttonOnclick("attendance","/attendance",token);
+    Student.buttonOnclick("payments","/payments",token);
+
+
+/* ----------------------------------------------------------------*/
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<table>
+    <thead>
+    <tr>
+        <th ng-click = "prop=null">NUM</th>
+        <th ng-click = "prop='team' ; reverse=!reverse">TEAM</th>
+        <th ng-click = "prop='empCnt' ; reverse=!reverse">EMP COUNT</th>
+        <th ng-click = "prop='contributions' ; reverse=!reverse">CONTRIBUTIONS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="contrib in contrListArray | orderBy:prop:reverse">
+        <td>
+            {{$index + 1}}
+        </td>
+        <td>
+            {{contrib.team}}
+        </td>
+        <td>
+            {{contrib.empCnt}}
+        </td>
+        <td>
+            {{contrib.contributions}}
+        </td>
+    </tr>
+
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var url = "http://127.0.0.1:8081";
+    var path = "/S";
+
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState !=4) return;
+        console.log(xhr.response);
+    }
+    /*xhr.open("GET", url+path, true);*/
+    xhr.open("GET",url+path,true)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+[
+  {
+    "Nickname": "Igor",
+    "Team": "A",
+    "Contributions": "20.0"
+  },
+  {
+    "Nickname": "Gena",
+    "Team": "A",
+    "Contributions": "40.0"
+  },
+  {
+    "Nickname": "Sasha",
+    "Team": "A",
+    "Contributions": "40.0"
+  },
+  {
+    "Nickname": "Igor2",
+    "Team": "B",
+    "Contributions": "25.0"
+  },
+  {
+    "Nickname": "Gena2",
+    "Team": "B",
+    "Contributions": "50.0"
+  },
+  {
+    "Nickname": "Sasha2",
+    "Team": "B",
+    "Contributions": "50.0"
+  },
+  {
+    "Nickname": "Batman",
+    "Team": "B",
+    "Contributions": "50.0"
+  }
+]

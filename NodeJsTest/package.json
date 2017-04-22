@@ -1,0 +1,25 @@
+{
+  "name": "zp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "cheerio": "^0.22.0",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.0",
+    "express": "~4.14.1",
+    "form-data": "^2.1.2",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "request": "^2.81.0",
+    "serve-favicon": "~2.3.2",
+    "sleep": "^5.1.0",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.24",
+    "bitmessage": "latest",
+    "bitmessage": "latest"
+  }
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="sampleFilters.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+<div id="container" ng-app="filters" ng-controller="filtersCntr">
+  <input type="text" ng-model="inp"/><br>
+   <!-- <span ng-bind="inp | currency : '&#8381':0"></span>-->
+    <!--<span ng-bind="inp | binary : 7"></span>-->
+    <span ng-bind="inp | binary: 5"></span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+body{
+	background: url(../images/fon.png);
+	padding: 0px;
+	margin: 0px;
+	font-family: Helvetica;
+}
+
+h1{
+	font-size: 2.5em;
+	text-align: center;
+	
+	padding: 10px;
+}
+h2{
+	font-size: 20px;
+	padding: 10px;
+}
+
+.header{
+	width: 100%;
+	background: #0E3974;
+}
+
+.menu{
+	width: 960px;
+	margin: 0 auto;
+}
+
+.menu li{
+	display: inline-block;
+
+}
+
+.menu li a{
+	display: block;
+	text-decoration: none;
+	color: #BFBFBF;
+	padding: 20px;
+
+}
+
+li{
+	list-style: none;
+}
+
+form{
+	margin: 20px; 
+	text-align: center;
+}

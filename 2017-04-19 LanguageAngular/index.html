@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="moduleApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="controller.js"></script>
+
+</head>
+<body >
+<div ng-controller="langCtrl">
+<button ng-value="l='en'" ng-click="btnClick(l)">EN</button>
+<button ng-value="l1='heb'"ng-click="btnClick(l1)">HEB</button><br>
+<p>{{res}}</p>
+</div>
+</body>
+</html>

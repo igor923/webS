@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+            src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+            integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+            crossorigin="anonymous"></script>
+    <style>
+        #a{
+            border: 1px solid black;
+            background-color: yellow;
+            width: 50vw;
+        }
+        #but{
+            position: absolute;
+            top: 300px;
+        }
+        .sq{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+        #b{
+            top:0px;
+            left: 52vw;
+            background-color: red;
+        }
+        #c{
+            top:200px;
+            left:0px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+<div id="a">
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+    <p>Text</p>
+</div>
+<div id="b" class="sq"></div>
+<div id="c" class="sq"></div>
+<button id="but">Push</button>
+<script>
+    var options={};
+    options.direction ="right";
+    var opt={};
+    opt.times=3;
+
+   /* $("#but").click(function () {
+        $("#a").effect("blind",options,3000);
+    })*/
+    /*$("#but").click(function () {
+        $("#a").effect("bounce",opt,3000);
+    }) */
+   /* $("#but").click(function () {
+        $("#a").toggle("drop",options,3000);
+    })*/
+  /* options.pieces=16;
+    $("#but").click(function () {
+        $("#a").toggle("explode",options,3000);
+    })*/
+   /* options.size=100;
+    $("#but").click(function () {
+        $("#a").toggle("fold",options,3000);
+    })
+
+*/
+ /*   options.color="red";
+    $("#but").click(function () {
+        $("#a").toggle("highlight",options,3000);
+    })*/
+   /* options.percent="130";
+    $("#but").click(function () {
+        $("#a").toggle("puff",options,3000);
+    })*/
+
+  /*  options.direction=150;
+    options.distanse=130;
+    options.times=3;
+    $("#but").click(function () {
+        $("#a").effect("shake",options,3000);
+    })*/
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "../jquery.min.js"></script>
+</head>
+<body>
+<script>
+    var son =$("<div>Text</div>");
+    var p = $("<p>New paragraph</p>");
+    var but= $("<button>Ha-ha</button>");
+    var inp= $("<input type = 'number'/>");
+    var cb= $("<input type = 'checkbox'/>");
+
+    son.css({width : "300px",
+            height : "300px",
+            backgroundColor : "red"});
+
+
+      /*v hvost*/
+
+    $(document.body).append(son);
+    son.append(but);
+    but.before(p);
+    p.after(inp);
+    son.prepend(cb);
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="../jquery.min.js"></script>
+    <script src="controllers.js"></script>
+</head>
+
+
+<div ng-controller="mainCtrl">
+    <div foo>
+        <div ng-transclude>Тут какой-то текст</div>
+    </div>
+
+    <div foo2>
+        <div ng-transclude>Тут какой-то текст2</div>
+    </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="digestVsApply.js"></script>
+    <link rel="stylesheet" href="digestVsApply.css">
+    <title>Title</title>
+</head>
+<body ng-app="app">
+<div ng-controller="BlackController" class="black-controller">
+    <button test-click="digestTest()">Мой digest</button>
+    <button test-click="applyTest()">Мой apply</button>
+    <button disabled>Счётчик: {{data.counter}}</button>
+</div>
+<div ng-controller="RedController" class="red-controller">
+    <button test-click="digestTest()">Мой digest</button>
+    <button test-click="applyTest()">Мой apply</button>
+    <button disabled>Счётчик: {{data.counter}}</button>
+    <div ng-controller="GreenController" class="green-controller">
+        <button test-click="digestTest()">Мой digest</button>
+        <button test-click="applyTest()">Мой apply</button>
+        <button disabled>Счётчик: {{data.counter}}</button>
+        <div ng-controller="BlueController" class="blue-controller">
+            <button test-click="digestTest()">Мой digest</button>
+            <button test-click="applyTest()">Мой apply</button>
+            <button disabled>Счётчик: {{data.counter}}</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

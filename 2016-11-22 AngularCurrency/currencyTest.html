@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="currencyTest.js"></script>
+    <script src="finances.js"></script>
+    <link rel="stylesheet" href="style.css"/>
+
+
+    <style>
+
+        input{
+            margin: 10px;
+            padding: 5px;
+
+        }
+        #tbl{
+            text-align: center;
+            width: 8vw;
+            height: 6vh;
+            border: 1px solid blue;
+            font-weight: 800;
+            background-color: white;
+            opacity: 0.9;
+        }
+        #tbl td{
+            background-color: darkgray;
+            color: whitesmoke;
+        }
+
+    </style>
+</head>
+<body>
+<table id="tbl" ng-app="invoice" ng-controller="invoiceCntr">
+    <tr>
+    <td></td>
+    <td  ng-repeat="c in currList">{{c}}</td>
+    </tr>
+    <tr ng-repeat="(c,v) in currossList">
+        <td ng-bind="c"></td>
+        <td ng-repeat="cross in v" ng-bind="cross | number :4"></td>
+    </tr>
+
+
+
+</table>
+<div id="container" ng-app="invoice" ng-controller="invoiceCntr"> <!--podvyzali app -->
+    <b>INVOICE</b><br>
+    <input type="number" min="0" ng-model ="qty"/>Quantity<br>
+    <input type="number" min="0" step="0.1" ng-model="prc"/>Price
+    <select ng-model="sel"> <!--sviazan s value v select-->
+        <option ng-repeat="(c,d) in currList">{{c}}</option>
+    </select><br>
+    <!--Total: {{total() | number : 2}}<span>{{sel}}</span>-->
+    Total: <span ng-repeat="(c,v) in currList">{{total(c)|number:2}}{{c}} </span>
+</div>
+<script>
+
+</script>
+</body>
+</html>

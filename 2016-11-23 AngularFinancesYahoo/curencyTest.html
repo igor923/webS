@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="financesYahoo.js"></script>
+    <script src="currencyTest.js"></script>
+
+    <link rel="stylesheet" href="style.css"/>
+
+
+    <style>
+
+        input{
+            margin: 10px;
+            padding: 5px;
+
+        }
+        #tbl{
+            text-align: center;
+            width: 8vw;
+            height: 6vh;
+            border: 1px solid blue;
+            font-weight: 800;
+            background-color: darkgrey;
+            opacity: 0.9;
+        }
+        #tbl td{
+
+            color: whitesmoke;
+        }
+
+        .black{
+            background-color: black;
+        }
+        .red{
+            background-color: red;
+
+        }
+        .green{
+            background-color: green;
+        }
+
+    </style>
+</head>
+<body>
+<table id="tbl" ng-app="invoice" ng-controller="invoiceCntr">
+    <tr>
+        <td></td>
+        <td  ng-repeat="c in currList">{{c}}</td>
+    </tr>
+    <tr ng-repeat="(c,v) in currossList">
+        <td ng-bind="c"></td>
+        <td ng-repeat="cross in v" ng-class="cross.cls" ng-bind="cross.act | number :4"></td>
+    </tr>
+
+
+
+</table>
+
+<script>
+
+</script>
+</body>
+</html>

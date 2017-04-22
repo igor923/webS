@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        body{
+            width: 100vw;
+            height: 100vh;
+        }
+        .round{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 60px;
+        }
+        .a{
+            top: 0px;
+            left: 0px;
+            background-color: red;
+        }
+        .b{
+            top: 0px;
+            left: 300px;
+            background-color: green;
+        }.c{
+            top: 300px;
+            left: 0px;
+            background-color: blue;
+        }.d{
+            top: 300px;
+            left: 300px;
+            background-color: yellow;
+        }
+        .but{
+            position: absolute;
+            top:200px;
+            left: 300px;
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+
+
+<div id="1" class="round a"></div>
+<div id="2" class="round b"></div>
+<div id="3" class="round c"></div>
+<div id="4" class="round d"></div>
+<button id="armagedon" class="but">Armagedon</button>
+</body>
+<script>
+    var death =$(".round:odd");
+    $(document.body).click(function () {death.remove()});
+    $(".but").click(function () {$(document.body).empty()})
+</script>
+</html>
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+    <select  id="sel"></select>
+    <span  id="code"></span>
+
+</div>
+<script>
+    var sel =document.getElementById("sel");
+    var code =document.getElementById("code");
+
+    sel.onchange = function () {
+        code.innerText =sel.value;
+    }
+
+    var url = "http://127.0.0.1:8081";
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if(xhr.readyState != 4) return;
+        console.log(xhr.response);
+        var countryCodes =JSON.parse(xhr.response);
+        for(var i=0;i<countryCodes.length;i++){
+            var opt = document.createElement("option");
+            opt.value = countryCodes[i].code;
+            opt.innerText = countryCodes[i].country;
+            sel.appendChild(opt);
+
+        }
+        code.innerText =countryCodes[0].code;
+    };
+    xhr.open("GET", url, true);
+    xhr.send();
+</script>
+</body>
+</html>

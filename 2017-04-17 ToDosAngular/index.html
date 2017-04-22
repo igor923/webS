@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../angular.min.js"></script>
+    <script src="../jquery.min.js"></script>
+    <script src="controllers.js"></script>
+    <style>
+        .done{
+            text-decoration: line-through;
+            color:#ccc;
+        }
+    </style>
+</head>
+<body ng-app="TodoApp">
+<div ng-controller="todoController">
+    <form name="frm" ng-submit="addTodo()">
+        <input type="text" name="newtodo" ng-model="newTodo" required >
+        <button ng-disabled="frm.$invalid">GO</button>
+        <ul>
+
+            <li ng-repeat="todo in todos">
+                <input type="checkbox" ng-model="todo.done"/>
+                <span ng-class="{'done':todo.done}">{{todo.title}}</span>
+            </li>
+        </ul>
+    </form>
+    <button ng-click="clearCompleted()">Clear Completed</button>
+
+</div>
+
+</body>
+</html>

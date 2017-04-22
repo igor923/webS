@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="Currency.js"></script>
+
+    <style>
+        #container{
+            position: absolute;
+            top:100px;
+            left: 150px;
+        }
+        input{
+            margin: 10px;
+            padding: 5px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="container" ng-app="currencyBase" ng-controller="currencyCntr">Amount
+    <input type="number" min="0" ng-model="start"/>Currency
+    <select ng-model="sel">
+        <option ng-repeat="(c,d) in  listCurr">{{c}}</option>
+
+    </select><br>
+
+    <span ng-model="listCurr">Result: </span>
+
+
+
+</div>
+
+</body>
+</html>

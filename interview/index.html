@@ -1,0 +1,27 @@
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script>
+<script src="app.js"></script>
+<script src="mainCtrl.js"></script>
+<script src="menuCtrl.js"></script>
+
+<head></head>
+<body ng-app="app" ng-controller="mainCtrl">
+
+<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6">
+
+    <div ng-controller="menuCtrl" class="">
+        {{test}}
+    </div>
+
+    <a href="#t1">Employees</a>
+    <a href="#t2">Contributions</a>
+    <div ng-view></div>
+
+</md-grid-list>
+
+
+</body>
+</html>

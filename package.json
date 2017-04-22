@@ -1,0 +1,9 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "dependencies": {
+    "cheerio-select": "latest",
+    "compression": "latest",
+    "iconv-lite": "^0.4.15"
+  }
+}

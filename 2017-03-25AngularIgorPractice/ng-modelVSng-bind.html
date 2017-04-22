@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html ng-app="helloApp" ng-controller="employeesCtrl">
+
+<head>
+    <title>AngularJS - ng-model vs ng-bind</title>
+    <script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+    <script>
+        //Creating Angular Module
+        var helloApp = angular.module('helloApp', []);
+
+        //Creating Controller with Data
+        helloApp.controller('employeesCtrl', function($scope) {
+            $scope.test = "AAAAAAAAAAA";
+            $scope.search="Enter Search Criteria";
+        });
+    </script>
+</head>
+<body>
+<!-- Creating input component and attaching to ng-model -->
+Search : <input type="text" ng-model="search"><br><br>
+
+Search ng-bind: <input type="text" ng-model="searchBind"><br><br>
+
+<b>Search Term:</b>{{search}}<br><br>
+<!--Mapping input component-->
+<span ng-bind="searchBind"></span><span ng-bind="search"></span>
+
+
+<input type="text" ng-model="test"><br>
+<input type="text" ng-model="test1"><br>
+<span ng-bind="test1"></span><br>
+<span>{{test1}}</span><br>
+<span>{{test}}</span>
+</body>
+</html>

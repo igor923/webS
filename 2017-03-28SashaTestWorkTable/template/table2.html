@@ -1,0 +1,13 @@
+<div>
+    <table>
+        <tr>
+            <td ng-repeat="(k,v) in contrListArray[0]" ng-click="$parent.sortType='k' ; $parent.reverse=!reverse">{{k}}
+            </td>
+
+        </tr>
+        <tr ng-repeat="obj in contrListArray | orderBy:sortType:reverse" >
+            <td ng-repeat="v in obj">{{v}}</td>
+        </tr>
+
+    </table>
+</div>

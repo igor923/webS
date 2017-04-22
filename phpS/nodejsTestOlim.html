@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #show{
+            text-align: center;
+            padding: 20px;
+            font-size: 20px;
+            font-family: Arial;
+            background-color: yellow;
+            color:red;
+
+        }
+    </style>
+</head>
+<body>
+<div id="show">Hi!</div>
+<button id="Vania">Vania</button>
+<button id="Petya">Petya</button>
+<button id="Other">Other</button>
+<script>
+
+    var url ="http://127.0.0.1:8081";
+    var d = document.getElementById("show");
+
+
+
+    document.getElementById("Vania").onclick=function () {
+        setRequest("Vania");
+    };
+    document.getElementById("Petya").onclick=function () {
+        setRequest("Petya");
+    };
+
+    var obj ={
+        name:"Masha",
+        age: 22
+    }
+    document.getElementById("Other").onclick=function () {
+        setRequestPOST(JSON.stringify(obj))
+
+    };
+
+
+    function setRequestPOST(req) {
+        var xhr =new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState != 4)return;
+            d.innerText=xhr.response;
+        };
+        xhr.open("POST",url,true);
+        xhr.send(req);
+    }
+
+
+    function setRequest(req) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState != 4)return;
+                if (xhr.status == 200) {
+                d.innerText=xhr.response;
+            }
+        };
+
+        xhr.open("GET", url+"/"+req, true);
+        xhr.send();
+    }
+</script>
+
+</body>
+</html>

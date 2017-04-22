@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="sampleTable.js"></script>
+    <style>
+        table{
+            position: absolute;
+            top:150px;
+            left: 100px;
+            border-collapse: collapse;
+        }
+        td{
+            width: 150px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<div id="container" ng-app="sampleTable" ng-controller="sampleTableCntr">
+    <table>
+        <tr>
+            <td ng-repeat="(k,v) in objArray[0]">{{k}}</td>
+        </tr>
+        <tr ng-repeat ="obj in objArray">
+            <td ng-repeat="val in obj">{{val}}</td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

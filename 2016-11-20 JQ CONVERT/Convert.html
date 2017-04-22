@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "../jquery.min.js"></script>
+</head>
+<body>
+<input id="sum" type="number">
+<select id="from"></select>is eq to result
+<span id="res">[ ]</span>
+<select id="to"></select><br>
+<button id="but">Convert</button>
+
+<script>
+    var selFrom = $("#from");
+    var selTo = $("#to");
+    var rates;
+    $.get("http://api.fixer.io/latest")
+            .then(function (data) {
+                console.log(data)
+                rates=data.rates; rates.EUR = 1.;})
+            .then(function (){createSelect(rates,selFrom);
+                              createSelect(rates,selTo)
+
+            });
+
+
+    function createSelect(r,sel) {
+        var opt = $("<option value='EUR'>EUR</option>");
+        sel.append(opt);
+        console.log(sel);
+        for(var key in r) {
+            if (key != "EUR") {
+                opt = $("<option value="+key+">" + key + "</option>")
+                console.log(opt);
+                sel.append(opt);
+
+            }
+        }
+        console.log(sel);
+    }
+
+    $("#but").click(function () {
+        $("#res").text(($("#sum").val()*rates[selTo.val()]/rates[selFrom.val()]).toFixed(4));
+    })
+
+</script>
+</body>
+</html>

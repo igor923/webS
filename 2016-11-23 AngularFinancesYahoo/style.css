@@ -1,0 +1,30 @@
+*{margin: 0;
+    font-family: Arial;
+}
+
+
+.currTable{
+    position: absolute;
+    top: 100vh;
+    left: 5vw;
+    border-collapse: collapse;
+}
+
+.currTable td{
+    text-align: center;
+    width: 8vw;
+    height: 6vh;
+    border: 1px solid blue;
+    font-weight: 800;
+    background-color: white;
+    opacity: 0.9;
+}
+
+.currTable tr:first-child{
+    color: darkgray;
+}
+
+.currTable td:first-child{
+    background-color: darkgray;
+    color: whitesmoke;
+}

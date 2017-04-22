@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+
+        }
+        td{
+            padding: 10px;
+            width: 200px;
+            border: 1px  solid black;
+        }
+    </style>
+</head>
+<body>
+<input id="VIN" type="text">VIN<br>
+<input id="model" type="text">model<br>
+<input id="year" type="text">year<br>
+<input id="engine" type="text">engine<br>
+<button id="add">Add</button>
+<script>
+    var VIN =document.getElementById("VIN");
+    var model =document.getElementById("model");
+    var year =document.getElementById("year");
+    var engine =document.getElementById("engine");
+
+    var del=[];
+
+    document.getElementById("add").onclick =function () {
+        var obj = {
+            VIN : VIN.value,
+            model: model.value,
+            year: year.value,
+            engine:engine.value
+        };
+        sendRequest("/add",obj);
+    };
+
+
+
+
+
+
+    var url = "http://127.0.0.1:8081";
+    function sendRequest(salt,obj) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange=function () {
+            if (xhr.readyState != 4)return;
+
+            if (salt == "/add") {
+                if (xhr.response == "Fail") {
+                    console.log("/add failed!")
+                } else {
+                    if (tbl)tbl.remove();
+                   document.body.appendChild(setTable(JSON.parse(xhr.response)));
+                    console.log(JSON.parse(xhr.response));
+                }
+            }
+            if (salt== "/remove"){
+                if (xhr.response !="OK"){
+                    console.log("/remove failed!")
+                } else if(xhr.response == "OK"){
+                    console.log("Car removed!")
+                } else{
+                    console.log("LOOK NEW Strange mistake");
+                }
+            }
+
+        };
+        xhr.open("POST",url+salt,true);
+        xhr.send(JSON.stringify(obj));
+
+
+    }
+    
+    function remove() {
+        
+    }
+
+   cars = [];
+    /*cars[0] = {VIN:12345,model:"Zhiguli",year:1983,engine:1.3};
+     cars[1] = {VIN:5432,model:"Tavria",year:1987,engine:1.1};
+
+     document.body.appendChild(setTable(cars));*/
+    var tbl;
+    var temp;
+    function setTable(cars) {
+        tbl =document.createElement("table");
+        for(var i=0;i<cars.length;i++){
+        
+            var row = tbl.insertRow();
+            row.onclick=function () {
+                 temp = {
+                   VIN : this.getElementsByTagName("td")[0].innerHTML.replace("<td>","").replace("</td>",""),
+                   model : this.getElementsByTagName("td")[1].innerHTML.replace("<td>","").replace("</td>",""),
+                   year : this.childNodes[2].innerHTML,
+                   engine : this.childNodes[3].innerHTML
+                };
+
+                this.remove();
+                sendRequest("/remove",temp);
+
+            };
+
+            for(var key in cars[i]){
+                row.insertCell().innerText =cars[i][key];
+
+            }
+
+        }
+
+        return tbl;
+    }
+
+
+</script>
+</body>
+</html>

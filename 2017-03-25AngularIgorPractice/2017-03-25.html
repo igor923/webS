@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="../angular.min.js"></script>
+    <script src="2017-03-25.js"></script>
+
+</head>
+<body >
+
+<p>Nothing here {{'yet'+'!'}}</p>
+<label>Check</label>
+<input type="checkbox" ng-model="master"><br>
+<input id="checkSlave" type="checkbox" ng-checked="master" aria-label="Slave input"><br>
+
+
+<!--<div ng-init="name = 'world'" ng-controller="DemoCtrl">-->
+<div  ng-controller="DemoCtrl">
+    <p>Hello {{name}}</p>
+    <p>1+8 = {{1+9}}</p>
+</div>
+
+<div ng-init="name2= 'world'" >
+    <p>Hello <span ng-bind="name2"></span></p>
+
+</div>
+
+
+<div ng-app="testModule" ng-controller="testCntrl">
+
+   <p>Hello <span>{{testVar}}</span></p>
+</div>
+</body>
+
+</html>

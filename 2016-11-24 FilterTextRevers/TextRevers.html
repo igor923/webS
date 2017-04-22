@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="TextRevers.js"></script>
+    <title>Title</title>
+
+</head>
+<body>
+<div id="container" ng-app="textRevers" ng-controller="textReversCntr">
+<input type="text" ng-model="myText"><br>
+   Total: <span ng-bind="myText | revers: myText"></span>
+
+</div>
+</body>
+</html>

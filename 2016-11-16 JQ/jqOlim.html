@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        .sq{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top:0px;
+            background-color: red;
+        }
+        .a{
+            left: 0px;
+
+        }
+        .b{
+            left: 150px;
+
+        }
+        .c{
+            left: 300px;
+
+        }
+        .d{
+            left: 450px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="1" class="sq a"></div>
+<div id="2" class="sq b"></div>
+<div id="3" class="sq c"></div>
+<div id="4" class="sq d"></div>
+<script>
+    /*console.log($("#1").css("backgroundColor","green"));*/
+   /* ($(".sq").last().css("backgroundColor","green"));
+    ($(".sq").eq(1).css("backgroundColor","green"));*/
+   /* ($(".sq:odd").css("backgroundColor","green"));*/
+
+    var dd=$(".sq:odd");
+    dd.click(function (e) {
+            e.target.style.top ="200px" /* jqelem.dblclick(function () {})*/
+    });
+    /*dd.mouseover(function () {$(this).css("backgroundColor","green")});*/
+    dd.on("mouseover",function () {$(this).css("backgroundColor","green")});
+    dd.mouseout(function (e) {e.target.style.backgroundColor="red"});
+   $(".sq:odd").css({"backgroundColor" :"green",
+                        "border" :"10px solid blue"});
+    /*console.log(document.getElementById("1"));*/
+
+    var first =$("#1");
+    first.toggle(function () {$(this).css("backgroundColor","blue")},
+                function () {$(this).css("backgroundColor","red") })
+</script>
+</body>
+</html>

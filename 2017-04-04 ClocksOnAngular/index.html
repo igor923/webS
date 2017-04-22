@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="clockApp">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="controller.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div ng-controller="clockCntr">{{res | date: 'mediumTime'}}</div>
+</body>
+</html>

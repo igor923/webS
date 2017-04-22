@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- <link rel="stylesheet" href="css/reset.css"> -->
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/jquery-3.1.1.min.js"></script>
+	<script src="js/main.js"></script>
+	<title>MASA Group 1</title>
+</head>
+<body>
+	<div class="header">
+		<ul class="menu">
+			<li><a href="#">punkt 1</a></li>
+			<li><a href="#">punkt 2</a></li>
+			<li><a href="#">punkt 3</a></li>
+			<li><a href="#">punkt 4</a></li>
+		</ul>
+	</div>
+	<h1>Конвертор валют</h1>
+	<form action="" id="form" method="get">
+		<p>Выберите имеющуюся у вас валюту : </p>
+		<select id="cur1" size="1" >
+			<option selected disabled="">Выбор</option>
+			<option value="USD">USD</option>
+			<option value="ILS">ILS</option>
+			<option value="RUB">RUB</option>
+			<option value="EUR">EUR</option>
+		</select>
+
+		<p>Выберите валюту, которую хотите получить : </p>
+		<select id="cur2" size="1">
+			<option selected>Выбор</option>
+			<option value="USD">USD</option>
+			<option value="ILS">ILS</option>
+			<option value="RUB">RUB</option>
+			<option value="EUR">EUR</option>
+		</select>
+
+		<p>Сумма денег для обмена: </p>
+		<input type="text" id="sum">
+
+		<p><input type="button" class="calc" value="Посчитать"></p>
+
+		<p>Результат: </p>
+		<input type="text" id="result" disabled >
+
+	</form>
+	 
+</body>
+</html>
+

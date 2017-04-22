@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="angularTable.js"></script>
+    <title>Title</title>
+
+
+
+    <style>
+
+        input{
+            margin: 10px;
+            padding: 5px;
+
+        }
+        #tbl{
+            text-align: center;
+            width: 8vw;
+            height: 6vh;
+            border: 1px solid blue;
+            font-weight: 800;
+            background-color: white;
+            opacity: 0.9;
+        }
+        #tbl td{
+            background-color: darkgray;
+            color: whitesmoke;
+        }
+
+    </style>
+</head>
+<body>
+<table id="tbl" ng-app="friends" ng-controller="friendsCntr">
+    <tr>
+
+        <td  ng-repeat="(c,v) in friends[0]"
+             ng-bind ="c"
+             ng-click="sort(c)"></td>
+
+
+    </tr>
+    <tr>
+        <td>
+            <input type="text" ng-model ="lNameFilter"/>
+        </td>
+        <td>
+            <input ng-model="fNameFilter"/>
+        </td>
+        <td>
+            <input ng-model="cityFilter"/>
+        </td>
+        <td>
+            <input type = "number" ng-model="min" /><br>
+            <input type = "number" ng-model="max" />
+        </td>
+        <td></td>
+    </tr>
+    <!--<tr ng-repeat="f in friends | orderBy : key :rev">-->
+    <!--<tr ng-repeat="f in friends | orderBy: fullName :rev">-->
+    <!--<tr ng-repeat="f in friends | orderBy: key :rev"> в key предается f по умолчанию-->
+    <tr ng-repeat="f in friends | range : min : max
+                                | names : 'lName' : lNameFilter
+                                | names : 'fName' : fNameFilter
+                                | names : 'city' : cityFilter">
+
+
+        <!--в key предается f по умолчанию-->
+        <td  ng-repeat="v in f">{{v}}</td>
+    </tr>
+
+</table>
+
+</body>
+</html>

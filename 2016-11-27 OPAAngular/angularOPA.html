@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="angularOPA.js"></script>
+    <style>
+        p{
+            font-size:30px;
+        }
+        .misha{
+             color: #660000;
+             background-color: #ffcccc;
+         }
+        .masha{
+            color: rebeccapurple;
+            background-color: lavender;
+        }
+        .sasha{
+            color: blue;
+            background-color: yellow;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div ng-app="opa" ng-controller="opaCntr">
+    <button ng-click="sasha()">Sasha</button>
+    <button ng-click="masha()">Masha</button>
+    <button ng-click="misha()">Misha</button>
+    <div ng-include="page"></div>
+
+</div>
+
+</body>
+</html>

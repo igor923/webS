@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../angular.min.js"></script>
+    <script src="../jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="geographyTest.js"></script>
+    <style>
+        .answer {
+            background-color: yellow;
+        }
+        .page-header{
+            padding: 3vmin;
+            font-size: 3vmin;
+            font-style: italic;
+        }
+        .quest{
+            font-size: 4vmin;
+            text-decoration: underline;
+        }
+        .btn{
+            outline: none !important;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="page-header text-center col-xs-12">Do you know geography?</div>
+    </div>
+    <div class="row">
+            <div class="col-xs-3"></div>
+            <div class="col-xs-6" ng-app="geography" ng-controller="geographyCntr">
+                <div questions></div>
+                <button class="btn-success"  ng-click="next()">Next question</button>
+                <button class="btn-danger"  ng-click="exit()">Exit</button>
+                <p ng-bind="result"></p>
+            </div>
+                <div class="col-xs-3"></div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="control.js"></script>
+
+    <title>Title</title>
+</head>
+<body>
+<div ng-app="myController" ng-controller="controllerCntr">
+        <input ng-model="hello"/><br>
+
+        <div ng-controller="contrl">
+        <input ng-model="name"/><br>
+        Total : {{hello}},{{name}}
+    </div>
+
+        <div ng-controller="contr2">
+            <input ng-model="name"/><br>
+            Total : {{hello}},{{name}}
+        </div>
+
+</div>
+</body>
+</html>

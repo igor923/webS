@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "jquery.min.js"></script>
+</head>
+<body>
+<script>
+
+
+
+    $(document).ready(function(){
+
+        var totalresult
+
+        var urlCur = "http://api.fixer.io/latest";
+        $.ajax({url: urlCur}).then(function(res){
+            totalresult=res.rates;
+//            console.log(res.rates['USD']);
+
+        });
+
+
+
+
+        $('.calc').on("click",function(){
+
+            var x = $("#cur1 option:selected" ).text()
+            console.log(x);
+            var cur1 = $('#cur1').val;
+            var cur2 = $('#cur2').val;
+            var sum = $('#sum');
+            $("#cur1").on("change", function(){
+                cur1 = $(this).children("option:selected").val();
+            });
+            $("#cur2").on("change", function(){
+                cur2 = $(this).children("option:selected").val();
+            });
+            console.log(totalresult);
+
+        });
+
+
+
+
+    });
+</script>
+
+</body>
+</html>

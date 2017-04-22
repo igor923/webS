@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="filterNegative.js"></script>
+</head>
+<style>
+    .red{
+        color : red;
+    }
+    .black{
+        color : black;
+    }
+    .green{
+        color : green
+    }
+</style>
+<body>
+<div id="container" ng-app="redNegatives" ng-controller="redNegativesCntr">
+<input type="number" ng-model="first"/><br>
+<input type="number" ng-model="second"/><br>
+<input type="number" ng-model="third"/><br>
+Total: <span ng-bind="total()" ng-class="total() | redNeg"> </span>
+</div>
+</body>
+</html>

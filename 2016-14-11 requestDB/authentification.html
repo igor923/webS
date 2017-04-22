@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .page{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width:100vw;
+            height: 100vh;
+            text-align: center;
+        }
+        .red{
+            background-color: rosybrown;
+            color: cyan;
+        }
+        .green{
+            background-color: #ccffcc;
+            color: #006600;
+        }
+        .blue{
+            background-color: #ccffcc;
+            color: black;
+        }
+        .au{
+            z-index: 10;
+            background-color: cadetblue;
+        }
+        #res{
+            color: #cc00ff;
+        }
+    </style>
+</head>
+<body>
+<div id="auth" class="page au">
+<input id ="log" type="text">Login<br>
+<input id="psw" type="text">Password<br>
+<button id="but">Send</button>
+    <button id="addUser">Registration</button><br>
+<span id="res"></span>
+
+</div>
+
+<div id="admin" class="page red">
+
+   <p>Admin</p>
+   <p></p>
+
+
+
+
+</div>
+<div id="teacher" class="page green">
+
+    <p>Teacher</p>
+    <p></p>
+
+
+
+</div>
+<div id="student" class="page blue">
+
+    <p>Student</p>
+    <p></p>
+
+
+
+</div>
+
+
+
+<script>
+    var url ="http://127.0.0.1:8081";
+    var student=document.getElementById("student");
+    var teacher=document.getElementById("teacher");
+    var admin=document.getElementById("admin");
+
+    var pair ={};
+    var log =document.getElementById("log");
+    var psw =document.getElementById("psw");
+    var but =document.getElementById("but");
+    var res =document.getElementById("res");
+
+
+    but.onclick = function () {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if(xhr.readyState!=4)return;
+
+                var resp =xhr.response;
+                if(resp=="Wrong login") res.innerText = "Wrong login";
+                else if(resp=="Wrong password") res.innerText = "Wrong password";
+                else{
+                    var user =JSON.parse(resp);
+                    var pages = document.querySelectorAll("body div")
+                    for (var i=0;i<pages.length;i++){
+                        pages[i].style.zIndex=0;
+                    }
+                    switch (user.role) {
+                        case 0: {student.zIndex=10;
+                            student.firstElementChild.nextElementSibling.innerText=resp;
+                            break;}
+                        case 1: {teacher.style.zIndex=10;
+                            teacher.firstElementChild.nextElementSibling.innerText=resp;
+                            break;}
+                        case 2: {admin.style.zIndex=10;
+                            admin.firstElementChild.nextElementSibling.innerText=resp;
+                            break;}
+                    }
+                }
+
+        };
+
+        xhr.open("POST",url,true);
+        pair.log=log.value;
+        pair.psw=psw.value;
+        xhr.send(JSON.stringify(pair));
+    }
+
+
+
+
+</script>
+</body>
+</html>
+
+//регистрация нового
+//исправление логин-пароля

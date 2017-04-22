@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "../jquery.min.js"></script>
+
+</head>
+<body>
+<script>
+
+
+    $.post("http://127.0.0.1:8081",{login: "Sasha", psw: 1234567})
+/*
+    $.ajax({
+        method: "POST",
+        url : "http://127.0.0.1:8081",
+        data : {
+            name : "Sasha",
+            age :58
+        },
+        success : function (data) {console.log(data);},
+        error: function () {console.log("Error!");}
+
+
+    })
+*/
+
+
+ /*var glass =   $.ajax({
+        method: "POST",
+        url : "http://127.0.0.1:8081",
+        data : {
+            name : "Sasha",
+            age :58
+        },
+
+
+    })*/.then(function (data){var tail = data.slice(data.indexOf(":")+2);
+             var arr =tail.split("&"); /*если закомментировать then будет объект глас полным*/
+            var obj={};
+            obj.login =arr[0].slice(arr[0].indexOf("=")+1);
+            obj.psw =arr[1].slice(arr[1].indexOf("=")+1);
+            return obj},
+         function () {return error}).
+
+        then(function (data) {console.log(data)}, function (error) {console.log(err)});
+
+
+
+/*setTimeout(function () {
+
+    console.log(glass);
+},3000);*/
+</script>
+
+</body>
+</html>

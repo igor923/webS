@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chirp</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="chirpApp.js"></script>
+</head>
+<body ng-app="chirpApp">
+<div id='main' ng-controller="mainController">
+    <form ng-submit="post()">
+        <input required type="text" placeholder="Your name" ng-model="newPost.created_by" />
+        <textarea required  maxlength="200" rows="3" placeholder="Say something" ng-model="newPost.text"></textarea>
+        <input class="button" type="submit" value="Chirp!" />
+    </form>
+    <div id="post-stream">
+        <h4>Chirp Feed</h4>
+        <div class='post' ng-repeat="post in posts | orderBy:'created_at':true" ng-class-odd="'odd'" ng-class-even="'even'">
+            <p>{{post.created_by}} says {{post.text}} at {{post.created_at}}</p>
+        </div>
+        <!--to be populated by Angular-->
+    </div>
+
+
+</div>
+</body>
+</html>

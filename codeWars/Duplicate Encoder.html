@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    duplicateEncode('(( @');
+    function duplicateEncode(word){
+
+      this.word=word.toLowerCase();
+      var res = this.word.split("");
+      var quantity=Array(res.length).fill(0);
+      for(var i=0;i<res.length-1;i++){
+          for(var j=1+i;j<res.length;j++){
+              if(res[i]==res[j]){
+                  quantity[i]++;
+                  quantity[j]++
+              }
+          }
+      }
+      for(var i=0;i<res.length;i++){
+          if(quantity[i]==0){
+              res[i]="(";
+          }else res[i]=")"
+      }
+      var strRes="";
+      strRes=res.join("");
+        console.log(strRes);
+
+    }
+</script>
+</body>
+</html>
